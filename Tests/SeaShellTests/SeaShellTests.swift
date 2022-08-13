@@ -3,20 +3,22 @@ import XCTest
 @testable import BasicMath
 
 final class SeaShellTests: XCTestCase {
+    let seaShell = SeaShell(math: Math())
+    
     func testAdd() throws {
-        XCTAssertEqual(SeaShell.add(a: 1, b: 2), 3)
+        XCTAssertEqual(seaShell.add(a: 1, b: 2), 3)
     }
 
     func testSubtract() throws {
-        XCTAssertEqual(SeaShell.subtract(a: 2, b: 1), 1)
+        XCTAssertEqual(seaShell.subtract(a: 2, b: 1), 1)
     }
 
     func testRepeatNumber() throws {
-        XCTAssertEqual(SeaShell.repeatNumber(x: 9, n: 3), [9, 9, 9])
+        XCTAssertEqual(seaShell.repeatNumber(x: 9, n: 3), [9, 9, 9])
     }
 
     func testRandomRepeatNumber() throws {
-        let a = SeaShell.randomRepeatNumber(x: 9)
+        let a = seaShell.randomRepeatNumber(x: 42)
         XCTAssertGreaterThanOrEqual(a.count, 2)
         XCTAssertLessThanOrEqual(a.count, 5)
 
@@ -26,7 +28,7 @@ final class SeaShellTests: XCTestCase {
     }
 
     func testAddNumbers() throws {
-        XCTAssertEqual(SeaShell.addNumbers(a: [3, 3, 3]), 9)
+        XCTAssertEqual(seaShell.addNumbers(a: [3, 3, 3]), 9)
     }
 
 }

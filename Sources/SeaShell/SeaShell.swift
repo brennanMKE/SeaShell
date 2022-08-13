@@ -1,43 +1,34 @@
 import BasicMath
 
 public struct SeaShell {
+    let math: MathProtocol
 
-    public static func add(a: Number, b: Number) -> Number {
-        BasicMath.add(a, b)
+    init(math: MathProtocol) {
+        self.math = math
     }
 
-    public static func subtract(a: Number, b: Number) -> Number {
-        BasicMath.subtract(a, b)
+    public func add(a: Number, b: Number) -> Number {
+        math.add(a, b)
     }
 
-    public static func repeatNumber(x: Number, n: Number) -> [Number] {
+    public func subtract(a: Number, b: Number) -> Number {
+        math.subtract(a, b)
+    }
+
+    // Passes Swift Array into the C function
+    public func repeatNumber(x: Number, n: Number) -> [Number] {
         var numbers = Array<Number>(repeating: 0, count: n)
-        BasicMath.repeatNumber(x, n, &numbers)
+        math.repeatNumber(x, n, &numbers)
         return numbers
     }
 
-    public static func randomRepeatNumber(x: Number) -> [Number] {
-
-//        let a = UnsafeMutablePointer<Number>.allocate(capacity: 1)
-//        let n = BasicMath.randomRepeatNumber(x, a)
-//        var newArray: [Number] = Array(repeating: 0, count: n)
-//
-//        defer {
-//            a.deinitialize(count: n)
-//            a.deallocate()
-//        }
-//
-//        for index in 0..<n {
-//            newArray[index] = a[index]
-//        }
-//
-//        return newArray
-
+    // Creates array in C and reads it in Swift
+    public func randomRepeatNumber(x: Number) -> [Number] {
         fatalError("Not implemented")
     }
 
-    public static func addNumbers(a: [Number]) -> Number {
-        let total = BasicMath.addNumbers(a, a.count)
+    public func addNumbers(a: [Number]) -> Number {
+        let total = math.addNumbers(a, a.count)
         return total
     }
 
