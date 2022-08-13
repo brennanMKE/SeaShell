@@ -24,7 +24,7 @@ Number subtract(Number a, Number b);
 /// @param a A
 void repeatNumber(Number x, Number n, Number* a);
 
-/// Repeats number x a random number of times.
+/// Repeats number x random number of times up to 10 elements.
 /// @param x X
 /// @param a A
 ///
@@ -35,6 +35,11 @@ Number randomRepeatNumber(Number x, Number* a);
 /// @param a A
 /// @param n N
 Number addNumbers(const Number* a, Number n);
+
+
+/// Releases memory for an array of numbers
+/// @param a array
+void releaseNumbers(Number* a);
 
 CF_ASSUME_NONNULL_END
 
