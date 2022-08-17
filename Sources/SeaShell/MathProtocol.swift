@@ -24,7 +24,7 @@ public protocol MathProtocol {
     /// @param a A
     ///
     /// Returns length of the output.
-    func randomRepeatNumber(_ x: Number, _ a: UnsafeMutablePointer<Number>) -> Number
+    func randomRepeatNumber(_ x: Number, _ a: UnsafeMutablePointer<UnsafeMutablePointer<Number>?>) -> Number
 
     /// Adds all number in array a of n elements.
     /// @param a A

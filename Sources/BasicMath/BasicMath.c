@@ -19,17 +19,16 @@ void repeatNumber(Number x, Number n, Number* a) {
     }
 }
 
-Number randomRepeatNumber(Number x, Number* a) {
-    Number n = arc4random() % 10;
-    if (n < 2) {
-        n = 2;
+Number randomRepeatNumber(Number x, Number ** a) {
+    int count = arc4random_uniform(10) + 2;
+    if (!a) {
+        return 0;
     }
-    a = (Number*)malloc(n * sizeof(Number));
-    int i;
-    for (i=0; i<n; i++) {
-        a[i] = x;
+    *a = malloc(count * sizeof(Number));
+    for (int i = 0; i < count; i++) {
+        (*a)[i] = x;
     }
-    return n;
+    return count;
 }
 
 Number addNumbers(const Number* a, Number n) {

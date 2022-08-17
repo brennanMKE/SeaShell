@@ -24,7 +24,13 @@ public struct SeaShell {
 
     // Creates array in C and reads it in Swift
     public func randomRepeatNumber(x: Number) -> [Number] {
-        fatalError("Not implemented")
+        var a: UnsafeMutablePointer<Number>? = nil
+        let count = math.randomRepeatNumber(x, &a)
+        let buffer = UnsafeBufferPointer<Number>(start: a, count: Int(count))
+        defer {
+            a?.deallocate()
+        }
+        return Array(buffer)
     }
 
     public func addNumbers(a: [Number]) -> Number {

@@ -29,7 +29,8 @@ void repeatNumber(Number x, Number n, Number* a);
 /// @param a A
 ///
 /// Returns length of the output.
-Number randomRepeatNumber(Number x, Number* a);
+//Number randomRepeatNumber(Number x, Number* a);
+Number randomRepeatNumber(Number x, Number * __nullable * __nonnull a);
 
 /// Adds all number in array a of n elements.
 /// @param a A

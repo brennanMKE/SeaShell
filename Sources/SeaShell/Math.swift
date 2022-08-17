@@ -15,7 +15,8 @@ public struct Math: MathProtocol {
         BasicMath.repeatNumber(x, n, a)
     }
 
-    public func randomRepeatNumber(_ x: Number, _ a: UnsafeMutablePointer<Number>) -> Number {
+
+    public func randomRepeatNumber(_ x: Number, _ a: UnsafeMutablePointer<UnsafeMutablePointer<Number>?>) -> Number {
         BasicMath.randomRepeatNumber(x, a)
     }
 

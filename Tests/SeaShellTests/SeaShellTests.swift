@@ -18,12 +18,13 @@ final class SeaShellTests: XCTestCase {
     }
 
     func testRandomRepeatNumber() throws {
-        let a = seaShell.randomRepeatNumber(x: 42)
+        let number = 42
+        let a = seaShell.randomRepeatNumber(x: number)
         XCTAssertGreaterThanOrEqual(a.count, 2)
-        XCTAssertLessThanOrEqual(a.count, 5)
+        XCTAssertLessThanOrEqual(a.count, 10)
 
         a.forEach {
-            XCTAssertEqual($0, 9)
+            XCTAssertEqual($0, number)
         }
     }
 
